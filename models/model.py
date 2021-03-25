@@ -92,7 +92,7 @@ class ModelCLR(nn.Module):
         outputs = self.bert_model(**encoded_inputs)
         
         with torch.no_grad():
-            sentence_embeddings = self.mean_pooling(outputs, encoded_inputs['attention_mask']).half()
+            sentence_embeddings = self.mean_pooling(outputs, encoded_inputs['attention_mask']).float() #.half()
             x = self.bert_l1(sentence_embeddings)
             x = F.relu(x)
             out_emb = self.bert_l2(x)

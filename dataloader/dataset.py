@@ -66,9 +66,10 @@ class ClrDataset(Dataset):
             text_path = os.path.join(self.text_root_dir, 
                                      self.clr_frame.iloc[idx, self.text_col]
                                     )
+            # print(text_path)
             with open(text_path) as f:
                 content = f.readlines()
-            content = content.replace("\n", "")
+            content = content[0].replace("\n", "")
             ls_text = content.split(".")
             if '' in ls_text:
                 ls_text.remove('')
