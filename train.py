@@ -88,7 +88,7 @@ class SimCLR(object):
         print(f'Training...')
 
         for epoch_counter in range(self.config['epochs']):
-            print(f'Epoch {epoch_counter}')
+            # print(f'Epoch {epoch_counter}')
             for xis, xls in tqdm(train_loader):
 
                 optimizer.zero_grad()
@@ -127,6 +127,8 @@ class SimCLR(object):
                 # optimizer_bert.step()
                 n_iter += 1
                 
+            print(f'Epoch {epoch_counter} ------ Train Loss: {loss}')
+            
             # validate the model if requested
             if epoch_counter % self.config['eval_every_n_epochs'] == 0:
                 valid_loss = self._validate(model, valid_loader, n_iter)
@@ -136,7 +138,8 @@ class SimCLR(object):
                     torch.save(model.state_dict(), os.path.join(model_checkpoints_folder, 'model.pth'))
                 self.writer.add_scalar('validation_loss', valid_loss, global_step=valid_n_iter)
                 valid_n_iter += 1
-
+                print(f'Validation {epoch_counter} - Valid Loss: {valid_loss}')
+                
             # warmup for the first 10 epochs
             if epoch_counter >= 10:
                 scheduler.step()
@@ -161,7 +164,7 @@ class SimCLR(object):
             # model_bert.eval()
             valid_loss = 0.0
             counter = 0
-            print(f'Validation step')
+            # print(f'Validation step')
             for xis, xls in tqdm(valid_loader):
 
                 xls = self.tokenizer(list(xls), return_tensors="pt", padding=True, truncation=self.truncation)
