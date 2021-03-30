@@ -59,8 +59,10 @@ class DataSetWrapper(object):
         color_jitter = transforms.ColorJitter(0.8 * self.s, 0.8 * self.s, 0.8 * self.s, 0.2 * self.s)
         data_transforms = transforms.Compose([
                                               transforms.Scale((self.input_shape[0], self.input_shape[1])),
-                                              transforms.RandomResizedCrop(size=self.input_shape[0], scale=(0.8, 1.0)),
-                                              transforms.RandomHorizontalFlip(),
+                                              transforms.RandomResizedCrop(size=self.input_shape[0], scale=(0.6, 1.0)),
+                                              transforms.RandomHorizontalFlip(p=0.5),
+                                              transforms.RandomAffine(degrees=(-20,20),translate=(0.1,0.1), scale=(0.95,1.05)),
+                                              transforms.ColorJitter(brightness=(0.6,1.4), contrast=(0.6,1.4), saturation=0, hue=0),
                                             #   transforms.RandomApply([color_jitter], p=0.8),
                                               transforms.RandomGrayscale(p=0.2),
                                             #   GaussianBlur(kernel_size=int(0.1 * self.input_shape[0])),
