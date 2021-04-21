@@ -66,6 +66,9 @@ For training in the Colab, please open [**Setup.ipynb**](https://github.com/wait
 
 After run the code `python run.py` in the notebook, you can open another notebook [**tensorboard.ipynb**](https://github.com/waittim/ConVIRT-Colab/blob/master/tensorboard.ipynb) to monitor the training process.
 
+### 4. After Training
+
+At the end of training, the final model and the corresponding config.yaml will be saved to `/runs`. Please use this model for transfer learning.
 
 
 ## Others
