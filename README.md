@@ -13,14 +13,14 @@ For more information about Google Colab, please check [Colab Introduction](https
 Before starting training, we need to download the training data and make them can be read in pairs. 
 
 There are two example of data preparation:
-- Local based: **data_prepare_MIMIC.ipynb**
-- Colab based: **data_prepare_openi.ipynb**
+- Local based: [**data_prepare_MIMIC.ipynb**](https://github.com/waittim/ConVIRT-Colab/blob/master/data_prepare_MIMIC.ipynb)
+- Colab based: [**data_prepare_openi.ipynb**](https://github.com/waittim/ConVIRT-Colab/blob/master/data_prepare_openi.ipynb)
 
 After preparation, there should be a CSV file which contains image path and text file path for each paired-image-text.(Or we can save the text content in the CSV file directly.)
 
 ### 2. Define Configuration
 
-In `config.yaml`, we need to define the training hyperperemeter, the data path, and the base models. Here is an example:
+In **config.yaml**, we need to define the training hyperperemeter, the data path, and the base models. Here is an example:
 
 ```
 batch_size: 64 #32
@@ -62,9 +62,9 @@ The model used refers to the models provided by [transformers](https://huggingfa
 
 ### 3. Training
 
-For training in the Colab, please open `Setup.ipynb`, then follow the introduction inside.
+For training in the Colab, please open [**Setup.ipynb**](https://github.com/waittim/ConVIRT-Colab/blob/master/Setup.ipynb), then follow the introduction inside.
 
-After run the code `python run.py` in the notebook, you can open another notebook `tensorboard.ipynb` to monitor the training process.
+After run the code `python run.py` in the notebook, you can open another notebook [**tensorboard.ipynb**](https://github.com/waittim/ConVIRT-Colab/blob/master/tensorboard.ipynb) to monitor the training process.
 
 
 
