@@ -6,10 +6,12 @@ np.random.seed(0)
 
 class GaussianBlur(object):
     # Implements Gaussian blur as described in the SimCLR paper
-    def __init__(self, kernel_size, min=0.1, max=2.0):
+    def __init__(self, kernel_size, min=0.1, max=3.0):
         self.min = min
         self.max = max
         # kernel size is set to be 10% of the image height/width
+        if kernel_size % 2 != 1:
+             kernel_size += 1
         self.kernel_size = kernel_size
 
     def __call__(self, sample):

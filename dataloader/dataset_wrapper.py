@@ -65,7 +65,7 @@ class DataSetWrapper(object):
                                               transforms.ColorJitter(brightness=(0.6,1.4), contrast=(0.6,1.4), saturation=0, hue=0),
                                             #   transforms.RandomApply([color_jitter], p=0.8),
                                               transforms.RandomGrayscale(p=0.2),
-                                            #   GaussianBlur(kernel_size=int(0.1 * self.input_shape[0])),
+                                              GaussianBlur(kernel_size=int(0.1 * self.input_shape[0])),
                                               transforms.ToTensor(),
                                               transforms.Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225)),
                                               ])
