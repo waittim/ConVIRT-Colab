@@ -1,10 +1,13 @@
 # Colab Implement: ConVIRT model
+### Contrastive VIsual Representation Learning from Text
 
-The repo is the Colab implementation of the architecture descibed in the ConVIRT paper: Contrastive Learning of Medical Visual Representations from Paired Images and Text. The authors of paper are Yuhao Zhang, Hang Jiang, Yasuhide Miura, Christopher D. Manning, Curtis P. Langlotz.
+The repo is a Colab implementation of the architecture descibed in the ConVIRT paper: [*Contrastive Learning of Medical Visual Representations from Paired Images and Text*](https://arxiv.org/abs/2010.00747). The authors of paper are Yuhao Zhang, Hang Jiang, Yasuhide Miura, Christopher D. Manning, Curtis P. Langlotz.
 
-Based on this repo, we can implement various paired-image-text Contrastive Learning tasks on Google Colab to provide effective pre-training models for transfer learning in the case of insufficient data volume.
+Deep neural networks learn from a large amount of data to obtain the correct parameters to perform a speciﬁc task. However, in practice, we often encounter a problem: **insuﬃcient amount of data**. 
 
-For more information about Google Colab, please check [Colab Introduction](https://colab.research.google.com/notebooks/intro.ipynb).
+Based on this repo, we can implement various paired-image-text Contrastive Learning tasks on [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb), which enable you to train effective pre-training models for transfer learning with insufficient data volume.
+
+
 
 ## Usage
 
@@ -16,19 +19,19 @@ There are two example of data preparation:
 - Local based: [**data_prepare_MIMIC.ipynb**](https://github.com/waittim/ConVIRT-Colab/blob/master/data_prepare_MIMIC.ipynb)
 - Colab based: [**data_prepare_openi.ipynb**](https://github.com/waittim/ConVIRT-Colab/blob/master/data_prepare_openi.ipynb)
 
-After preparation, there should be a CSV file which contains image path and text file path for each paired-image-text.(Or we can save the text content in the CSV file directly.)
+After preparation, there should be a CSV file which contains image path and text file path for each paired-image-text. (Or we can save the text content in the CSV file directly.)
 
 ### 2. Define Configuration
 
 In **config.yaml**, we need to define the training hyperperemeter, the data path, and the base models. Here is an example:
 
 ```
-batch_size: 64 #32
+batch_size: 32
 epochs: 1000
 eval_every_n_epochs: 5
 fine_tune_from: Jan16_02-27-36_edu-GPU-Linux
 log_every_n_steps: 2
-learning_rate: 5e-4 #1e-4
+learning_rate: 1e-4
 weight_decay: 1e-6
 fp16_precision: True
 truncation: True
@@ -58,7 +61,7 @@ loss:
   alpha_weight: 0.75
 ```
 
-The model used refers to the models provided by [transformers](https://huggingface.co/transformers/).
+The models used (res_base_model, bert_base_model) refers to the models provided by [transformers](https://huggingface.co/transformers/).
 
 ### 3. Training
 
@@ -68,7 +71,7 @@ After run the code `python run.py` in the notebook, you can open another noteboo
 
 ### 4. After Training
 
-At the end of training, the final model and the corresponding config.yaml will be saved to `/runs`. Please use this model for transfer learning.
+At the end of training, the final model and the corresponding config.yaml will be saved to `./runs/`. Please use this model for transfer learning.
 
 
 ## Others
