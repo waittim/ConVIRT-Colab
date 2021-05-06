@@ -48,7 +48,7 @@ dataset:
   input_shape: (224,224,3)
   num_workers: 4
   valid_size: 0.1
-  csv_file: 'path/for/CSV_containing_MIMIC-CXR_paths_for_images_and_text.csv'
+  csv_file: 'path/for/CSV_containing_paths_for_images_and_text.csv' 
   text_from_files: True # If 'True' the text input will be read from .txt files, if 'False' it will be loaded direct from the CSV File 
   img_root_dir: '/your/root/images/directory'
   text_root_dir: '/your/root/text/directory' # The root directory for the text files if "text_from_files" is True
