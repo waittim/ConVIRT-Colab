@@ -3,9 +3,9 @@
 
 The repo is a Colab implementation of the architecture descibed in the ConVIRT paper: [*Contrastive Learning of Medical Visual Representations from Paired Images and Text*](https://arxiv.org/abs/2010.00747). The authors of paper are Yuhao Zhang, Hang Jiang, Yasuhide Miura, Christopher D. Manning, Curtis P. Langlotz.
 
-Deep neural networks learn from a large amount of data to obtain the correct parameters to perform a speciﬁc task. However, in practice, we often encounter a problem: **insuﬃcient amount of data**. 
+Deep neural networks learn from a large amount of data to obtain the correct parameters to perform a speciﬁc task. However, in practice, we often encounter a problem: **insuﬃcient amount of labeled data**. However, if your data contains pairs of images and text, you can solve the problem with Contrastive Learning. 
 
-Based on this repo, we can implement various paired-image-text Contrastive Learning tasks on [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb), which enable you to train effective pre-training models for transfer learning with insufficient data volume.
+Based on this repository, we can implement various paired-image-text Contrastive Learning tasks on [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb), which enable you to train effective pre-training models for transfer learning with insufficient data volume. With this pre-trained model, you can train with less labeled data to get a good performing model.
 
 
 
