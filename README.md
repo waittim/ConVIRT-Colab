@@ -1,9 +1,9 @@
 # Colab Implement: ConVIRT model
 ### Contrastive VIsual Representation Learning from Text
 
-The repo is a Colab implementation of the architecture descibed in the ConVIRT paper: [*Contrastive Learning of Medical Visual Representations from Paired Images and Text*](https://arxiv.org/abs/2010.00747). The authors of paper are Yuhao Zhang, Hang Jiang, Yasuhide Miura, Christopher D. Manning, Curtis P. Langlotz.
+Deep neural networks learn from a large amount of data to obtain the correct parameters to perform a speciﬁc task. However, in practice, we often encounter a problem: **insuﬃcient amount of labeled data**. However, if your data contains pairs of images and text, you can solve the problem with c. 
 
-Deep neural networks learn from a large amount of data to obtain the correct parameters to perform a speciﬁc task. However, in practice, we often encounter a problem: **insuﬃcient amount of labeled data**. However, if your data contains pairs of images and text, you can solve the problem with Contrastive Learning. 
+Contrastive learning is a kind of self-supervised learning method. It does not require specialized labels, but rather a method to learn the correct parameters from the unlabeled data itself. It aims to learn an encoder that makes the encoding results of similar classes of data similar and makes the encoding results of diﬀerent classes of data as diﬀerent as possible. Typical contrast learning is done based on comparisons between two images. However, if we have paired image and text data, contrast learning can also be applied between images and text.
 
 Based on this repository, we can implement various paired-image-text Contrastive Learning tasks on [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb), which enable you to train effective pre-training models for transfer learning with insufficient data volume. With this pre-trained model, you can train with less labeled data to get a good performing model.
 
@@ -61,7 +61,7 @@ loss:
   alpha_weight: 0.75
 ```
 
-The models used (res_base_model, bert_base_model) refers to the models provided by [transformers](https://huggingface.co/transformers/).
+The models used [res_base_model, bert_base_model] refers to the models provided by [transformers](https://huggingface.co/transformers/).
 
 ### 3. Training
 
@@ -76,7 +76,9 @@ At the end of training, the final model and the corresponding config.yaml will b
 
 ## Others
 
-Note: This repository was forked and modified from https://github.com/sthalles/SimCLR.
+The repository is a Colab implementation of the architecture descibed in the ConVIRT paper: [*Contrastive Learning of Medical Visual Representations from Paired Images and Text*](https://arxiv.org/abs/2010.00747). The authors of paper are Yuhao Zhang, Hang Jiang, Yasuhide Miura, Christopher D. Manning, Curtis P. Langlotz.
+
+This repository was originally modified from https://github.com/sthalles/SimCLR.
 
 References: 
 - Yuhao Zhang et al. Contrastive Learning of Medical Visual Representations from Paired Images and Text. https://arxiv.org/pdf/2010.00747.pdf
