@@ -1,7 +1,7 @@
 # Colab Implement: ConVIRT model
 ### Contrastive VIsual Representation Learning from Text
 
-Deep neural networks learn from a large amount of data to obtain the correct parameters to perform a speciﬁc task. However, in practice, we often encounter a problem: **insuﬃcient amount of labeled data**. However, if your data contains pairs of images and text, you can solve the problem with c. 
+Deep neural networks learn from a large amount of data to obtain the correct parameters to perform a speciﬁc task. However, in practice, we often encounter a problem: **insuﬃcient amount of labeled data**. However, if your data contains pairs of images and text, you can solve the problem with contrastive learning. 
 
 Contrastive learning is a kind of self-supervised learning method. It does not require specialized labels, but rather a method to learn the correct parameters from the unlabeled data itself. It aims to learn an encoder that makes the encoding results of similar classes of data similar and makes the encoding results of diﬀerent classes of data as diﬀerent as possible. Typical contrast learning is done based on comparisons between two images. However, if we have paired image and text data, contrast learning can also be applied between images and text.
 
